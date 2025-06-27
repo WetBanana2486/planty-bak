@@ -66,7 +66,7 @@ For a production environment, it is **highly recommended** to implement robust s
     ```
 
 2.  **Install dependencies:**
-    If you haven't already, install the required Node.js packages:
+    Ensure that you install the required Node.js packages:
     ```bash
     npm install
     ```
