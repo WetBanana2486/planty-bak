@@ -1,6 +1,10 @@
 import express from "express";
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
-const port = 3311;
+// Set the port from environment variable or default to 4000
+const port = process.env.PORT || 4000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -41,8 +45,8 @@ app.post('/plants', (req, res) => {
   const body = req.body;
 
   if (!body.name || !body.species) {
-    return res.status(400).json({ 
-      error: 'name and species are required' 
+    return res.status(400).json({
+      error: 'name and species are required'
     });
   }
 
