@@ -87,6 +87,4 @@ app.delete('/plants/:id', (req, res) => {
   res.status(204).end(); // 204 No Content
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+export default app; // Export the app for testing or further configuration
