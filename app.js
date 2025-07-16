@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from 'dotenv';
-import router from "./routes/index.routes.js"; // Import the main router
+import router from "./src/api/routes/index.routes.js"; // Import the main router
 
 dotenv.config();
 

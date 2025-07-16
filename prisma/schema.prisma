@@ -1,9 +1,27 @@
+//Generate prisma client
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
-
+//Set data source and connect url
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+///Basic model for product
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Int
+  imageUrl    String
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime @default(now())
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  products Product[]
 }
