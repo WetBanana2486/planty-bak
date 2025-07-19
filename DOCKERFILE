@@ -1,0 +1,13 @@
+# This Dockerfile is for pg database container creation
+FROM postgres:17
+
+# Env variables for this development PostgreSQL container
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+ENV POSTGRES_DB=artisans_db
+
+# Setting volume mount (can be overridden externally)
+VOLUME ["/var/lib/postgresql/data"]
+
+# PostgreSQL runs on port 5432 by default
+EXPOSE 5432
