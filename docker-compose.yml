@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
     image: postgres:17
-    container_name: artisans-db
+    container_name: artisans_db
     restart: always
     environment:
       POSTGRES_USER: postgres

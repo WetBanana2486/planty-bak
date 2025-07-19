@@ -1,5 +1,5 @@
 # This Dockerfile is for pg database container creation
-FROM postgres:17
+FROM postgres:latest
 
 # Env variables for this development PostgreSQL container
 ENV POSTGRES_USER=postgres

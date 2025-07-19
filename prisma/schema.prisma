@@ -12,13 +12,19 @@ datasource db {
 model Product {
   id          String   @id @default(cuid())
   name        String
-  description String
+  description String? //nullable
   price       Int
-  imageUrl    String
+  imageUrl    String? //nullable
   categoryId  String
   category    Category @relation(fields: [categoryId], references: [id])
   createdAt   DateTime @default(now())
+  //isFeatured Boolean @default(false)     // Featured item for recommend list
+  //inventory  Int     @default(0)         // For Inventory control
+  //published  Boolean @default(true)      // Enable hidden product feature
+  //updatedAt  DateTime @updatedAt         // Auto track last update
 }
+
+
 
 model Category {
   id       String    @id @default(cuid())
